@@ -1,0 +1,21 @@
+.HPbar {
+    width: 150px;
+    background-color: black;
+    padding: 1px;
+}
+
+.HPbar > div {
+    background-color: black;
+    height: 16px;
+}
+
+.MPbar {
+    width: 150px;
+    background-color: black;
+    padding: 1px;
+}
+
+.MPbar > div {
+    background-color: black;
+    height: 16px;
+}

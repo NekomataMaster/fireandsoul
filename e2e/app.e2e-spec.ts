@@ -1,6 +1,6 @@
 import { BudgetTablePage } from './app.po';
 
-describe('budget-table App', function() {
+describe('budgetIN-table App', function() {
   let page: BudgetTablePage;
 
   beforeEach(() => {

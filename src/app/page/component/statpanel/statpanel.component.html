@@ -1,0 +1,102 @@
+<div class="ui-g">
+    <span>
+        <div class="ui-g" style="width: 500px;height: 220px;border-style: ridge;">
+            <div class="ui-g-3">
+                <div class="ui-g-12">
+                    <img src="../../images/chars/warrior.png" alt="" style="width: 100px;height: 120px">
+                </div>
+                <div class="ui-g-12">
+                    --------------
+                </div>
+            </div>
+            <div class="ui-g-9 ui-g-nopad">
+                <div class="ui-g-2">
+                    <span>Name: </span>
+                </div>
+                <div class="ui-g-4">
+                    <span>AAAAAA</span>
+                </div>
+                <div class="ui-g-2">
+                    <span>Class: </span>
+                </div>
+                <div class="ui-g-4">
+                    <span>Warrior</span>
+                </div>
+                <div class="ui-g-1">
+                    <span>HP: </span>
+                </div>
+                <div class="ui-g-4" align="center">
+                    <span>{{HP}} / {{maxHP}}</span>
+                </div>
+                <div class="ui-g-7">
+                    <div style="width: 200px;"><p-progressBar [value]="percentHP | number: '1.0-0'" class="hp" showValue=true unit="%"></p-progressBar></div>
+                </div>
+                <div class="ui-g-1">
+                    <span>MP: </span>
+                </div>
+                <div class="ui-g-4" align="center">
+                    <span>{{MP}} / {{maxMP}}</span>
+                </div>
+                <div class="ui-g-7">
+                    <div style="width: 200px;">
+                        <p-progressBar [value]="percentMP | number: '1.0-0'" class="mp" showValue="false" unit="%"></p-progressBar>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    --------------
+                </div>
+            </div>
+        </div>
+    </span>
+
+
+    <span>
+        <div class="ui-g" style="width: 500px;height: 220px;border-style: ridge;">
+            <div class="ui-g-3">
+                <div class="ui-g-12" style="width: 100px;height: 120px">
+                    <img src="../../images/chars/1002.gif" align="middle" >
+                </div>
+                <div class="ui-g-12">
+                    --------------
+                </div>
+            </div>
+            <div class="ui-g-9 ui-g-nopad">
+                <div class="ui-g-2">
+                    <span>Name: </span>
+                </div>
+                <div class="ui-g-4">
+                    <span>Water Dragon</span>
+                </div>
+                <div class="ui-g-2">
+                    <span>Class: </span>
+                </div>
+                <div class="ui-g-4">
+                    <span>?????</span>
+                </div>
+                <div class="ui-g-1">
+                    <span>HP: </span>
+                </div>
+                <div class="ui-g-4" align="center">
+                    <span>{{eHP}} / {{emaxHP}}</span>
+                </div>
+                <div class="ui-g-7">
+                    <div style="width: 200px;"><p-progressBar [value]="epercentHP | number: '1.0-0'" class="hp" showValue=true unit="%"></p-progressBar></div>
+                </div>
+                <div class="ui-g-1">
+                    <span>MP: </span>
+                </div>
+                <div class="ui-g-4" align="center">
+                    <span>{{eMP}} / {{emaxMP}}</span>
+                </div>
+                <div class="ui-g-7">
+                    <div style="width: 200px;">
+                        <p-progressBar [value]="epercentMP | number: '1.0-0'" class="mp" showValue="false" unit="%"></p-progressBar>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    --------------
+                </div>
+            </div>
+        </div>
+    </span>
+</div>

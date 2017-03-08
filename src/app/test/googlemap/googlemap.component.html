@@ -1,0 +1,14 @@
+<span>
+    <button type="button" pButton label="Zoom In" icon="fa-search-plus" (click)="zoomIn(gmap.getMap())"></button>
+    <button type="button" pButton label="Zoom Out" icon="fa-search-minus" (click)="zoomOut(gmap.getMap())"></button>
+    <button type="button" pButton label="Zoom = 1" icon="fa-search" (click)="zoomEqual(gmap.getMap(),1)"></button>
+    <button type="button" pButton label="Reset View" icon="fa-arrows" (click)="changeView(gmap.getMap())"></button>
+    <button type="button" pButton label="Random" icon="fa-map-marker" (click)="randomMark()"></button>
+    <button type="button" pButton label="A to B" icon="fa-map-marker" (click)="setRountMap(gmap.getMap())"></button>
+</span>
+
+<div>
+    <p-gmap #gmap [options]="options" [overlays]="overlays" [style]="{'width':'100%','height':'580px'}" ></p-gmap>
+</div>
+
+
