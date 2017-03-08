@@ -19,6 +19,7 @@ import { AngularFireModule } from 'angularfire2';
 
 
 import {FireBaseService} from './share/service/firebase-service';
+import { TesterComponent } from './test/tester/tester.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyB0Cw8xKGgLz5pz8T4JVbzLPPuz2eiJidM",
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     HeaderComponent,
     TravelComponent,
     HeaderComponent,
-    FirebaseComponent
+    FirebaseComponent,
+    TesterComponent
   ],
   imports: [
     BrowserModule,

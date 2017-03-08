@@ -1,0 +1,64 @@
+<div class="ui-g">
+
+
+  <div class="ui-g-12">
+    <div class="ui-g-2">
+      <button pButton type="text" style="width: 120px;" (click)="changeclass(1)" label="Novice"></button>
+    </div>
+  </div>
+
+  <div class="ui-g-12">
+    <div class="ui-g-2">
+      <button pButton type="text" style="width: 120px;" (click)="changeclass(2)" label="Swordman"></button>
+    </div>
+    <div class="ui-g-2">
+      <button pButton type="button" style="width: 120px;" (click)="changeclass(8)" label="Knight"></button>
+    </div>
+    <div class="ui-g-2">
+      <button pButton type="button" style="width: 120px;" (click)="changeclass(9)" label="Crusader"></button>
+    </div>
+    <div class="ui-g-2">
+    </div>
+    <!--<button pButton type="button" style="width: 120px;" (click)="changeclass(3)" label="Thief"></button>-->
+    <!--<button pButton type="button" style="width: 120px;" (click)="changeclass(4)" label="Merchant"></button>-->
+    <!--<button pButton type="button" style="width: 120px;" (click)="changeclass(5)" label="Archer"></button>-->
+    <!--<button pButton type="button" style="width: 120px;" (click)="changeclass(6)" label="Magician"></button>-->
+    <!--<button pButton type="button" style="width: 120px;" (click)="changeclass(7)" label="Acolyte"></button>-->
+  </div>
+
+  <div class="ui-g-12">
+    <div class="ui-g-2">
+    </div>
+    <div class="ui-g-2">
+    </div>
+  </div>
+
+
+</div>
+<br><br>
+
+
+<div style="height: 400px;width: 230px;overflow: auto;">
+  <table style="border-style: ridge">
+    <thead>
+    <tr>
+      <th colspan="8">{{class}}</th>
+    </tr>
+    <tr>
+      <th>level</th><th>str</th><th>agi</th><th>vit</th><th>int</th><th>dex</th><th>luk</th><th>all</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bonus of bonus">
+      <td>{{bonus.level}}</td>
+      <td>{{bonus.str}}</td>
+      <td>{{bonus.agi}}</td>
+      <td>{{bonus.vit}}</td>
+      <td>{{bonus.int}}</td>
+      <td>{{bonus.dex}}</td>
+      <td>{{bonus.luk}}</td>
+      <td>{{bonus.str+bonus.agi+bonus.vit+bonus.int+bonus.dex+bonus.luk}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

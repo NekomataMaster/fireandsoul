@@ -9,6 +9,7 @@ import {TravelComponent} from './page/component/travel/travel.component';
 
 import {GooglemapComponent} from './test/googlemap/googlemap.component';
 import {FirebaseComponent} from './test/firebase/firebase.component';
+import {TesterComponent} from './test/tester/tester.component';
 
 const appRoutes: Routes = [
     { path: '', component: MainComponent, pathMatch: 'full'},
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
     { path: 'stat', component: StatpanelComponent },
     { path: 'travel', component: TravelComponent },
     { path: 'googlemap', component: GooglemapComponent },
-    { path: 'firebase', component: FirebaseComponent }
+    { path: 'firebase', component: FirebaseComponent },
+    { path: 'tester', component: TesterComponent }
 
 ];
 
