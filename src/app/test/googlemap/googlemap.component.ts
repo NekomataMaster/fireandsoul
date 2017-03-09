@@ -11,6 +11,15 @@ export class GooglemapComponent implements OnInit {
 
   overlays: any[];
 
+  marker: any[];
+  polyline: any[];
+  polygon: any[];
+
+
+
+  directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsService = new google.maps.DirectionsService;
+
   constructor() { }
 
   ngOnInit() {
@@ -29,7 +38,6 @@ export class GooglemapComponent implements OnInit {
       // new google.maps.Circle({center: {lat: 36.90707, lng: 30.56533}, fillColor: '#1976D2', fillOpacity: 0.35, strokeWeight: 1, radius: 1500}),
       new google.maps.Polyline({path: [{lat: 13.73, lng: 100.51},{lat: 13.71, lng: 100.511}], geodesic: true, strokeColor: '#FF0000', strokeOpacity: 0.5, strokeWeight: 2})
     ];
-    // google.maps.geometry.spherical.computeArea(yourPolygon.getPath());
   }
   zoomIn(map) {
     map.setZoom(map.getZoom()+1);
@@ -53,18 +61,11 @@ export class GooglemapComponent implements OnInit {
   }
 
   setRountMap(map) {
-    // map = new google.maps.Map({position: {lat: 13, lng: 100}});
-
-    let directionsDisplay = new google.maps.DirectionsRenderer;
-    let directionsService = new google.maps.DirectionsService;
-
-    directionsDisplay.setMap(map);
-
-    this.route(directionsService, directionsDisplay);
+    this.directionsDisplay.setMap(map);
+    this.route(this.directionsService, this.directionsDisplay);
   }
 
   route(directionsService, directionsDisplay){
-    // var selectedMode = document.getElementById('mode').value;
     directionsService.route({
       origin: {lat: (Math.random())+13.709901, lng: (Math.random())+100.511867},
       destination: {lat: (Math.random())+13.709877, lng: (Math.random())+100.541620},
@@ -93,7 +94,43 @@ export class GooglemapComponent implements OnInit {
         window.alert('Directions request failed due to ' + status);
       }
     });
+  }
 
+  a:any;
+  q = new google.maps.LatLng(13.90, 100.50);
+  w = new google.maps.LatLng(13.90, 100.53);
+  e = new google.maps.LatLng(13.92, 100.53);
+  r = new google.maps.LatLng(13.92, 100.50);
+
+  z = new google.maps.LatLng(13.83, 100.51);
+  x = new google.maps.LatLng(13.81, 100.511);
+
+  headtext:string;
+  text:number;
+  endtext:string;
+  area(){
+    let a = new google.maps.Polygon({
+      paths: [
+        this.q,
+        this.w,
+        this.e,
+        this.r
+      ], strokeOpacity: 0.5, strokeWeight: 1,fillColor: '#1976D2', fillOpacity: 0.35
+    });
+    this.overlays.push(a);
+    this.headtext = "Area";
+    this.text = google.maps.geometry.spherical.computeArea(a.getPath().getArray());
+    this.endtext = "m^2";
+  }
+  dis(){
+    this.overlays.push(new google.maps.Polyline({path: [this.z,this.x], geodesic: true, strokeColor: '#FF0000', strokeOpacity: 0.5, strokeWeight: 2}));
+    this.headtext = "Distance";
+    this.text = google.maps.geometry.spherical.computeDistanceBetween(this.z, this.x);
+    this.endtext = "m";
+  }
+
+  clear(){
+    this.overlays=[];
   }
 
 }

@@ -68,7 +68,7 @@ export class TesterComponent implements OnInit {
       this.max=10;
     }
     if(id==2){
-      this.class="Swordman";
+      this.class="Mercenary";
       this.strBase =0.000;
       this.agiBase =0.000;
       this.vitBase =0.000;
