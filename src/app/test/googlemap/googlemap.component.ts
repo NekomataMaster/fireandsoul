@@ -105,6 +105,9 @@ export class GooglemapComponent implements OnInit {
   z = new google.maps.LatLng(13.83, 100.51);
   x = new google.maps.LatLng(13.81, 100.511);
 
+  newz = new google.maps.LatLng(13.83, 100.51);
+  newx = new google.maps.LatLng(13.71, 100.511);
+
   headtext:string;
   text:number;
   endtext:string;
@@ -122,11 +125,17 @@ export class GooglemapComponent implements OnInit {
     this.text = google.maps.geometry.spherical.computeArea(a.getPath().getArray());
     this.endtext = "m^2";
   }
+
+  u:any;
   dis(){
-    this.overlays.push(new google.maps.Polyline({path: [this.z,this.x], geodesic: true, strokeColor: '#FF0000', strokeOpacity: 0.5, strokeWeight: 2}));
+    this.u = new google.maps.Polyline({path: [this.z,this.x], geodesic: true, strokeColor: '#FF0000', strokeOpacity: 0.5, strokeWeight: 2});
+    this.overlays.push(this.u);
     this.headtext = "Distance";
     this.text = google.maps.geometry.spherical.computeDistanceBetween(this.z, this.x);
     this.endtext = "m";
+  }
+  afterdis(){
+    this.u.setPath([this.newz,this.newx]);
   }
 
   clear(){

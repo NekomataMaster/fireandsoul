@@ -4,13 +4,15 @@
     <button type="button" pButton label="Zoom = 1" icon="fa-search" (click)="zoomEqual(gmap.getMap(),1)"></button>
     <button type="button" pButton label="Reset View" icon="fa-arrows" (click)="changeView(gmap.getMap())"></button>
     <button type="button" pButton label="Random" icon="fa-map-marker" (click)="randomMark()"></button>
-    <button type="button" pButton label="A to B" icon="fa-map-marker" (click)="setRountMap(gmap.getMap())"></button>
-    <button type="button" pButton label="Get Area" icon="fa-map-marker" (click)="area(gmap.getMap())"></button>
-    <button type="button" pButton label="Get Distance" icon="fa-map-marker" (click)="dis(gmap.getMap())"></button>
+    <button type="button" pButton label="A to B" icon="fa-car" (click)="setRountMap(gmap.getMap())"></button>
+    <button type="button" pButton label="Get Area" icon="fa-square-o" (click)="area()"></button>
+    <button type="button" pButton label="Get Distance" icon="fa-arrows-h" (click)="dis()"></button>
+    <button type="button" pButton label="new Path" icon="fa-arrows-h" (click)="afterdis()"></button>
+    <button type="button" pButton label="Clear" icon="fa-refresh" (click)="clear()"></button>
 </span>
 
 <div>
-    <p-gmap #gmap [options]="options" [overlays]="overlays" [style]="{'width':'100%','height':'580px'}" ></p-gmap>
+    <p-gmap #gmap [options]="options" [overlays]="overlays" [style]="{'width':'100%','height':'480px'}" ></p-gmap>
 </div>
 
 <div>
