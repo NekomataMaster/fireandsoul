@@ -53,6 +53,7 @@ export class BattleComponent implements OnInit {
   constructor() {}
 
   hotkeys(event){
+    console.log(event.keyCode);
     if (event.keyCode == 90 && !this.endgame && !this.onbattle){//a
       this.action(1,1);
     }else if (event.keyCode == 65 && !this.endgame && !this.onbattle && this.MP >=5){//a

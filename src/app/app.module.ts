@@ -19,6 +19,7 @@ import { AngularFireModule } from 'angularfire2';
 
 
 import {FireBaseService} from './share/service/firebase-service';
+import {TestApi} from './share/service/TestApi';
 import { TesterComponent } from './test/tester/tester.component';
 
 export const firebaseConfig = {
@@ -53,7 +54,7 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [appRoutingProviders,FireBaseService],
+  providers: [appRoutingProviders,FireBaseService,TestApi],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

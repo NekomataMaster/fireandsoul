@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-googlemap',
+  host: {'(window:keydown)': 'hotkeys($event)'},
   templateUrl: 'googlemap.component.html',
   styleUrls: ['googlemap.component.css']
 })
@@ -21,6 +22,13 @@ export class GooglemapComponent implements OnInit {
   directionsService = new google.maps.DirectionsService;
 
   constructor() { }
+
+  hotkeys(event){
+    console.log(event.keyCode);
+    if (event.keyCode == 90) {
+      this.randomMark();
+    }
+  }
 
   ngOnInit() {
     this.options = {

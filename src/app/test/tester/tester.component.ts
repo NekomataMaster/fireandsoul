@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FireBaseService}from '../../share/service/firebase-service';
+import {TestApi}from '../../share/service/TestApi';
 
 @Component({
   selector: 'app-tester',
@@ -24,9 +26,19 @@ export class TesterComponent implements OnInit {
 
   bonus:Bonus[];
 
-  constructor() { }
+  constructor(private fireBaseService:FireBaseService,private testApi:TestApi) { }
+
+
+
+
+
 
   ngOnInit() {
+    console.log(this.testApi.testGet());
+
+    // console.log(this.fireBaseService.());
+    this.fireBaseService.getChars().subscribe((data:any) => {this.bonus=data;});
+
     this.update();
   }
 
@@ -68,7 +80,7 @@ export class TesterComponent implements OnInit {
       this.max=10;
     }
     if(id==2){
-      this.class="Mercenary";
+      this.class="Warrior";
       this.strBase =0.000;
       this.agiBase =0.000;
       this.vitBase =0.000;
@@ -84,7 +96,76 @@ export class TesterComponent implements OnInit {
       this.lukBonus=0.040;
       this.max=50;
     }
-    if(id==8){
+    if(id==3){
+      this.class="Trickster";
+      this.strBase =0.000;
+      this.agiBase =0.000;
+      this.vitBase =0.000;
+      this.intBase =0.000;
+      this.dexBase =0.000;
+      this.lukBase =0.000;
+
+      this.strBonus=0.065;
+      this.agiBonus=0.140;
+      this.vitBonus=0.050;
+      this.intBonus=0.030;
+      this.dexBonus=0.040;
+      this.lukBonus=0.075;
+      this.max=50;
+    }
+    if(id==4){
+      this.class="Scout";
+      this.strBase =0.000;
+      this.agiBase =0.000;
+      this.vitBase =0.000;
+      this.intBase =0.000;
+      this.dexBase =0.000;
+      this.lukBase =0.000;
+
+      this.strBonus=0.030;
+      this.agiBonus=0.100;
+      this.vitBonus=0.040;
+      this.intBonus=0.050;
+      this.dexBonus=0.140;
+      this.lukBonus=0.040;
+      this.max=50;
+    }
+    if(id==5){
+      this.class="Magician";
+      this.strBase =0.000;
+      this.agiBase =0.000;
+      this.vitBase =0.000;
+      this.intBase =0.000;
+      this.dexBase =0.000;
+      this.lukBase =0.000;
+
+      this.strBonus=0.030;
+      this.agiBonus=0.060;
+      this.vitBonus=0.040;
+      this.intBonus=0.160;
+      this.dexBonus=0.080;
+      this.lukBonus=0.030;
+      this.max=50;
+    }
+    if(id==6){
+      this.class="Assistant";
+      this.strBase =0.000;
+      this.agiBase =0.000;
+      this.vitBase =0.000;
+      this.intBase =0.000;
+      this.dexBase =0.000;
+      this.lukBase =0.000;
+
+      this.strBonus=0.050;
+      this.agiBonus=0.075;
+      this.vitBonus=0.080;
+      this.intBonus=0.100;
+      this.dexBonus=0.070;
+      this.lukBonus=0.025;
+      this.max=50;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    if(id==7){
       this.class="Knight";
       this.strBase =5.000;
       this.agiBase =4.000;
@@ -101,8 +182,8 @@ export class TesterComponent implements OnInit {
       this.lukBonus=0.060;
       this.max=50;
     }
-    if(id==9){
-      this.class="Crusader";
+    if(id==8){
+      this.class="Gladiator";
       this.strBase =5.000;
       this.agiBase =4.000;
       this.vitBase =6.000;
@@ -110,12 +191,29 @@ export class TesterComponent implements OnInit {
       this.dexBase =3.000;
       this.lukBase =2.000;
 
-      this.strBonus=0.075;
-      this.agiBonus=0.060;
-      this.vitBonus=0.130;
-      this.intBonus=0.050;
+      this.strBonus=0.160;
+      this.agiBonus=0.100;
+      this.vitBonus=0.040;
+      this.intBonus=0.020;
+      this.dexBonus=0.060;
+      this.lukBonus=0.020;
+      this.max=50;
+    }
+    if(id==9){
+      this.class="Spellsword";
+      this.strBase =5.000;
+      this.agiBase =4.000;
+      this.vitBase =6.000;
+      this.intBase =0.000;
+      this.dexBase =3.000;
+      this.lukBase =2.000;
+
+      this.strBonus=0.070;
+      this.agiBonus=0.050;
+      this.vitBonus=0.100;
+      this.intBonus=0.130;
       this.dexBonus=0.040;
-      this.lukBonus=0.045;
+      this.lukBonus=0.010;
       this.max=50;
     }
     this.update();
