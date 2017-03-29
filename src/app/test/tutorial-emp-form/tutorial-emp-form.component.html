@@ -1,0 +1,24 @@
+    <div class="ui-g">
+    <div class="ui-g-12 ui-g-nopad">
+        <div class="ui-g-2 ui-g-nopad">Name : </div>
+        <div class="ui-g-10 ui-g-nopad">
+            <input type="text" [(ngModel)]="dataModel.empName" pInputText>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-g-nopad">
+        <div class="ui-g-2 ui-g-nopad">Address : </div>
+        <div class="ui-g-10 ui-g-nopad">
+            <input type="text" [(ngModel)]="dataModel.empAddr" pInputText>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-g-nopad">
+        <div class="ui-g-2 ui-g-nopad">E-mail : </div>
+        <div class="ui-g-10 ui-g-nopad">
+            <input type="text" [(ngModel)]="dataModel.empMail" pInputText>
+        </div>
+    </div>
+    <div class="ui-g-12">
+        <button type="button" pButton label="Save" icon="fa-floppy-o" (click)="save(dataModel)" ></button>
+        <button type="button" pButton label="Clear" icon="fa-times"   (click)="clear(dataModel)" ></button>
+    </div>
+</div>

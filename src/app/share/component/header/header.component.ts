@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SelectItem} from 'primeng/primeng';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  dd: SelectItem[];
+  d:any=1;
+
+  constructor() {
+    this.dd = [];
+    this.dd.push({label:'Game', value:1});
+    this.dd.push({label:'Test1', value:2});
+
+  }
 
   ngOnInit() {
+
   }
 
 }

@@ -1,0 +1,17 @@
+<p-dataTable [value]="dataList" selectionMode="single" [(selection)]="selectedEmp" (onRowClick)="clickRow($event)">
+  <p-header>Employee</p-header>
+  <p-column field="empId" header="empId"></p-column>
+  <p-column field="empName" header="empName"></p-column>
+  <p-column field="empAddr" header="empAddr"></p-column>
+  <p-column field="empAge" header="empAge"></p-column>
+  <p-column field="empGender" header="empGender"></p-column>
+  <p-column field="empNat" header="empNat"></p-column>
+  <p-column field="empTel" header="empTel"></p-column>
+  <p-column field="empMail" header="empMail"></p-column>
+  <p-column header="DELETE">
+    <template let-col let-data="rowData" pTemplate="body">
+      <button type="button" pButton icon="fa-trash-o" (click)="delete(data.empId)" ></button>
+      {{data.empId}}
+    </template>
+  </p-column>
+</p-dataTable>

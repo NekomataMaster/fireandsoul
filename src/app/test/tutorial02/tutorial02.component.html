@@ -1,0 +1,29 @@
+<p>
+  Tutorial02-Input-text1 : {{txt}}
+</p>
+<br>
+<p>
+  EventEmitter-text2 : {{txt2a}}
+</p>
+<input type="text" [(ngModel)]="txt2b" pInputText />
+<button pButton type="button" (click)="clicked(txt2b)" label="Click"></button>
+<br><div>===========================</div>
+<p-dataTable [value]="datalist">
+  <p-column field="empName" header="empName"></p-column>
+  <p-column field="empAddr" header="empAddr"></p-column>
+  <p-column field="empAge" header="empAge"></p-column>
+  <p-column field="empGender" header="empGender"></p-column>
+  <p-column field="empNat" header="empNat"></p-column>
+  <p-column field="empTel" header="empTel"></p-column>
+  <p-column field="empMail" header="empMail"></p-column>
+</p-dataTable>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+<!--<p>In Comment</p>-->
+
+<app-tutorial-emp-form [dataModel]="selectEmp" (add)="onAdd($event)" (edit)="onEdit($event)"></app-tutorial-emp-form>
+<app-tutorial-emp-table [dataList]="empList" (rowClick)="onRowClick($event)" (delClick)="onDelEmp($event)"></app-tutorial-emp-table>

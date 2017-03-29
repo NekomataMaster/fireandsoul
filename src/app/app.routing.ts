@@ -11,6 +11,12 @@ import {GooglemapComponent} from './test/googlemap/googlemap.component';
 import {FirebaseComponent} from './test/firebase/firebase.component';
 import {TesterComponent} from './test/tester/tester.component';
 
+
+import {Tutorial01Component} from './test/tutorial01/tutorial01.component';
+import {TutorialEmpComponent} from './test/tutorial-emp/tutorial-emp.component';
+
+
+
 const appRoutes: Routes = [
     { path: '', component: MainComponent, pathMatch: 'full'},
     { path: 'battle', component: BattleComponent },
@@ -18,7 +24,11 @@ const appRoutes: Routes = [
     { path: 'travel', component: TravelComponent },
     { path: 'googlemap', component: GooglemapComponent },
     { path: 'firebase', component: FirebaseComponent },
-    { path: 'tester', component: TesterComponent }
+    { path: 'tester', component: TesterComponent },
+    { path: 'tutorial01', component: Tutorial01Component },
+    { path: 'tutorialEmp', component: TutorialEmpComponent },
+
+
 
 ];
 

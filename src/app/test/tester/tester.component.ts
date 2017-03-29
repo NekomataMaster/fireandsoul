@@ -34,8 +34,8 @@ export class TesterComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.testApi.testGet());
-
+    // console.log(this.testApi.testGet());
+    this.fireBaseService.getA().subscribe((data:any) => {console.log(data.node);});
     // console.log(this.fireBaseService.());
     this.fireBaseService.getChars().subscribe((data:any) => {this.bonus=data;});
 

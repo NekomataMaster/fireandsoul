@@ -1,0 +1,8 @@
+<p>text1 : {{text1}}</p>
+<input type="text" [(ngModel)]="text1" pInputText />
+<button pButton type="button" (click)="clicked()" label="Click"></button>
+<br><p>text2 : {{text2a}}</p>
+<input type="text" [(ngModel)]="text2b" pInputText />
+<button pButton type="button" (click)="clicked2(text2b)" label="Click"></button>
+<br><div>======================================================</div>
+<app-tutorial02 [txt]="text1" (changeTxt)="onChangeTxt($event)"></app-tutorial02>
