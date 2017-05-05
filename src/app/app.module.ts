@@ -9,19 +9,21 @@ import {
   ProgressBarModule,
   ButtonModule,
   DropdownModule,
+  GrowlModule,
   GMapModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
-import { StatpanelComponent } from './page/component/statpanel/statpanel.component';
 import { GooglemapComponent } from './test/googlemap/googlemap.component';
-import { BattleComponent } from './page/component/battle/battle.component';
-import {appRoutingProviders, routing} from "./app.routing";
 import { MainComponent } from './page/component/main/main.component';
 import { HeaderComponent } from './share/component/header/header.component';
-import { TravelComponent } from './page/component/travel/travel.component';
+import { FireAndSoulComponent } from './page/component/fireandsoul/fireandsoul.component';
 import { FirebaseComponent } from './test/firebase/firebase.component';
 import { AngularFireModule } from 'angularfire2';
+import { MapslotService } from './page/service/fireandsoul/mapslot.service';
+import { ValiableService } from './page/service/fireandsoul/variable.service';
+import {DataBaseService} from './page/service/fireandsoul/database-service';
 
+import { appRoutingProviders, routing } from "./app.routing";
 import {FireBaseService} from './share/service/firebase-service';
 import {TestApi} from './share/service/TestApi';
 import { TesterComponent } from './test/tester/tester.component';
@@ -46,12 +48,10 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    StatpanelComponent,
     GooglemapComponent,
-    BattleComponent,
     MainComponent,
     HeaderComponent,
-    TravelComponent,
+    FireAndSoulComponent,
     HeaderComponent,
     FirebaseComponent,
     TesterComponent,
@@ -70,11 +70,12 @@ export const firebaseConfig = {
     InputTextModule,
     DropdownModule,
     ButtonModule,
+    GrowlModule,
     GMapModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [appRoutingProviders,FireBaseService,TestApi,TutorialService,EmployeeService,],
+  providers: [appRoutingProviders,FireBaseService,TestApi,TutorialService,EmployeeService,MapslotService,ValiableService,DataBaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

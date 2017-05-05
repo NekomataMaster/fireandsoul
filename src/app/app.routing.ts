@@ -1,10 +1,8 @@
 import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from "@angular/core";
 
-import {BattleComponent} from './page/component/battle/battle.component';
-import {StatpanelComponent} from './page/component/statpanel/statpanel.component';
 import {MainComponent} from './page/component/main/main.component';
-import {TravelComponent} from './page/component/travel/travel.component';
+import {FireAndSoulComponent} from './page/component/fireandsoul/fireandsoul.component';
 
 
 import {GooglemapComponent} from './test/googlemap/googlemap.component';
@@ -19,9 +17,9 @@ import {TutorialEmpComponent} from './test/tutorial-emp/tutorial-emp.component';
 
 const appRoutes: Routes = [
     { path: '', component: MainComponent, pathMatch: 'full'},
-    { path: 'battle', component: BattleComponent },
-    { path: 'stat', component: StatpanelComponent },
-    { path: 'travel', component: TravelComponent },
+    { path: 'fireandsoul', component: FireAndSoulComponent },
+
+
     { path: 'googlemap', component: GooglemapComponent },
     { path: 'firebase', component: FirebaseComponent },
     { path: 'tester', component: TesterComponent },

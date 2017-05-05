@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import * as models from './models';
+// import * as models from './model';
 
 export interface Test {
     id: number;

@@ -1,0 +1,91 @@
+/*table {*/
+    /*border-collapse: collapse;*/
+    /*table-layout:fixed;*/
+/*}*/
+
+/*table, tr, td{*/
+    /*border: 1px solid rgba(100, 100, 100, 0.2);*/
+    /*padding: 0;*/
+/*}*/
+
+/*td {*/
+    /*width: 14px !important;*/
+    /*height: 14px !important;*/
+    /*overflow: hidden;*/
+/*}*/
+
+
+
+.HPbar {
+    width: 150px;
+    background-color: black;
+    padding: 1px;
+}
+
+.HPbar > div {
+    background-color: black;
+    height: 16px;
+}
+
+.MPbar {
+    width: 150px;
+    background-color: black;
+    padding: 1px;
+}
+
+.MPbar > div {
+    background-color: black;
+    height: 16px;
+}
+
+
+
+.selectTable{
+    border-style: double;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 200px !important;
+    min-width: 200px !important;
+    width: 200px !important;
+    max-height: 300px !important;
+    min-height: 300px !important;
+    height: 300px !important;
+    /*table-layout:fixed !important;*/
+    margin: 0 auto;
+}
+
+.selectTablePic {
+    width: 50px;
+    height: 75px;
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.selectTableData {
+    /*width: 150px;*/
+    height: 75px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.selectBigDiv {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.selectDiv {
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    text-align:center;
+}
+
+.selectCharPic {
+    display:block; width:100%; height:auto;
+}
+
+.selectButton {
+    width: 200px;
+}

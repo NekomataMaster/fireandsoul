@@ -1,0 +1,425 @@
+<p-growl [value]="msg" life="2500"></p-growl>
+<button pButton type="text" (click)="test()" label="test"></button>
+<button pButton type="text" (click)="logout()" label="Logout"  *ngIf="gameState != 'login' && gameState != 'register'"></button>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'login'">
+    <div style="text-align: center"><br>LOGIN<br><hr></div>
+    <br><br><br>
+    <div class="ui-g ui-g-nopad">
+        <div class="ui-g-12">
+            <div class="ui-g-3"></div>
+            <div class="ui-g-2">
+                <div>Username : </div>
+            </div>
+            <div class="ui-g-4" style="margin-top: -5px;">
+                <input type="text" pInputText [(ngModel)]="usernameLogin"/>
+            </div>
+            <div class="ui-g-3"></div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-3"></div>
+            <div class="ui-g-2">
+                <div>Password : </div>
+            </div>
+            <div class="ui-g-4" style="margin-top: -5px;">
+                <input type="password" pInputText [(ngModel)]="passwordLogin"/>
+            </div>
+            <div class="ui-g-3"></div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-3"></div>
+            <div class="ui-g-6" style="text-align: center">
+                <button pButton type="text" (click)="login()" label="Login"></button>
+            </div>
+            <div class="ui-g-3"></div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-3"></div>
+            <div class="ui-g-6" style="text-align: center">
+                <button pButton type="text" (click)="register()" label="Register"></button>
+            </div>
+            <div class="ui-g-3"></div>
+        </div>
+    </div>
+</div>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'register'">
+    <div style="text-align: center">REGISTER</div>
+    <div class="ui-g ui-g-nopad">
+        <button pButton type="text" (click)="registing()" label="Register"></button>
+    </div>
+</div>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'select'">
+    <div style="text-align: center">SELECT YOUR PARTY</div>
+    <br><br><br>
+    <div class="ui-g ui-g-nopad">
+
+        <div class="ui-g-4 ui-g-nopad">
+            <div class="selectBigDiv">
+                <table class="selectTable">
+                    <tr *ngIf="idTeam[0].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[0].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[0].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[0].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[0].id == null">
+                        <td style="width: 200px;height: 298px;">
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="selectDiv">
+                <button pButton type="text" (click)="create(0)" label="Create" class="selectButton" *ngIf="idTeam[0].id == null"></button>
+                <button pButton type="text" (click)="select(0)" label="{{idTeam[0].teamName}}" class="selectButton" *ngIf="idTeam[0].id != null"></button>
+            </div>
+        </div>
+        <div class="ui-g-4 ui-g-nopad">
+            <div class="selectBigDiv">
+                <table class="selectTable">
+                    <tr *ngIf="idTeam[1].id == null">
+                        <td style="width: 200px;height: 298px;">
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="selectDiv">
+                <button pButton type="text" (click)="create(1)" label="Create" class="selectButton" *ngIf="idTeam[1].id == null"></button>
+                <button pButton type="text" (click)="select(1)" label="{{idTeam[1].teamName}}" class="selectButton" *ngIf="idTeam[1].id != null"></button>
+            </div>
+        </div>
+
+        <div class="ui-g-4 ui-g-nopad">
+            <div class="selectBigDiv">
+                <table class="selectTable">
+                    <tr *ngIf="idTeam[2].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[2].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[2].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[2].id != null">
+                        <td class="selectTablePic">
+                            <img src="../../../../images/chars/warrior.png" alt="" style="display:block;" class="selectCharPic">
+                        </td>
+                        <td class="selectTableData">
+                            <div class="ui-g-4 ui-g-nopad">Name: </div><div class="ui-g-8 ui-g-nopad">AAA</div>
+                            <div class="ui-g-4 ui-g-nopad">Class:</div><div class="ui-g-8 ui-g-nopad">BBB</div>
+                            <div class="ui-g-4 ui-g-nopad">Level:</div><div class="ui-g-8 ui-g-nopad">CCC</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="idTeam[2].id == null">
+                        <td style="width: 200px;height: 298px;">
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="selectDiv">
+                <button pButton type="text" (click)="create(2)" label="Create" class="selectButton" *ngIf="idTeam[2].id == null"></button>
+                <button pButton type="text" (click)="select(2)" label="{{idTeam[2].teamName}}" class="selectButton" *ngIf="idTeam[2].id != null"></button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'create'">
+    <div style="text-align: center">CREATE YOUR TEAM</div>
+    <div class="ui-g ui-g-nopad">
+        <button pButton type="text" (click)="creating()" label="Create"></button>
+    </div>
+</div>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'travel'">
+    <div style="text-align: center">TRAVEL</div>
+    <button pButton type="text" (click)="stat()" label="stat"></button>
+
+    <button pButton type="text" (click)="searchBattle()" label="searchBattle"></button>
+    <button pButton type="text" (click)="travelF()" label="travelF"></button>
+    <button pButton type="text" (click)="travelB()" label="travelB"></button>
+</div>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'stat'">
+    <div style="text-align: center">STAT</div>
+    <button pButton type="text" (click)="travel()" label="travel"></button>
+</div>
+
+
+<div style="width: 800px;height: 600px; margin: 0 auto; border-style: solid;" *ngIf="gameState == 'battle' || gameState == 'victory' || gameState == 'over'">
+    <div style="text-align: center">BATTLE</div>
+    <button pButton type="text" (click)="attack()" label="attack"></button>
+    <button pButton type="text" (click)="escape()" label="escape"></button>
+</div>
+
+
+
+
+
+<!--<div style="width: 800px;height: 600px; margin: 0 auto;" *ngIf="gameState == 'travel'">-->
+    <!--<table style="width:600px;height:570px;background-image: url(../../../../images/maps/A001.png);margin: 0 auto;" >-->
+
+        <!--<tr *ngFor="let j of yCount;">-->
+            <!--<td *ngFor="let i of xCount;" (click)="getPos(i,j)">-->
+
+                <!--&lt;!&ndash;<div style="height: 14px; width:14px;background-color: rgba(255, 0, 0, 0.5); display:block;"  *ngIf="!walkable(i,j)">&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                <!--<img src="../../../../images/maps/npc0.png" alt="" style="display:block;" height="14" width="14" *ngIf="checkPos('n001',i,j)">-->
+                <!--<img src="../../../../images/maps/player.png" alt="" style="display:block;" height="14" width="14" *ngIf="checkPos('p',i,j)">-->
+            <!--</td>-->
+        <!--</tr>-->
+
+    <!--</table>-->
+<!--</div>-->
+
+
+<!--w 42-->
+<!--h 38-->
+
+
+<!--battle-->
+
+<!--<div>-->
+<!--<div class="ui-g">-->
+<!--<div class="ui-g-12" style="text-align: center"><h1>{{text}}</h1></div>-->
+<!--<div class="ui-g-5" align="right">-->
+<!--<div class="HPbar" align="left">-->
+<!--<div [style.background-color]="getStyle(percentHP)" [style.width]="getPercent('HP')">-->
+<!--<span style="position: static;color: white">{{HP}}/{{maxHP}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="MPbar" align="left" style="margin-bottom: 3px">-->
+<!--<div style="background-color: mediumblue" [style.width]="getPercent('MP')">-->
+<!--<span style="position: static;color: white">{{MP}}/{{maxMP}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div style="width: 100px;height: 120px" align="center">-->
+<!--<img src="../../images/chars/warrior.png" alt="" style="width: 100px;height: 120px">-->
+<!--</div>-->
+
+<!--<div>{{textAtPlayer}}</div>-->
+<!--</div>-->
+<!--<div class="ui-g-2">-->
+<!--</div>-->
+<!--<div class="ui-g-5" align="left">-->
+<!--<div class="HPbar" align="left">-->
+<!--<div [style.background-color]="getStyle(epercentHP)" [style.width]="getPercent('eHP')">-->
+<!--<span style="position: static;color: white">{{eHP}}/{{emaxHP}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="MPbar" align="left" style="margin-bottom: 3px">-->
+<!--<div style="background-color: mediumblue" [style.width]="getPercent('eMP')">-->
+<!--<span style="position: static;color: white">{{eMP}}/{{emaxMP}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div style="width: 100px;height: 120px;" align="center">-->
+<!--<img src="../../images/monsters/1.gif" alt="" style="margin-top: 30px">-->
+<!--</div>-->
+
+<!--<div>{{textAtEnemy}}</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<button pButton type="text" (click)="test()"></button>-->
+
+
+<!--<div>-->
+<!--<button pButton type="text" (click)="action(1,1)" label="[Z] Attack"-->
+<!--[disabled]="endgame||onbattle" style="width: 150px;text-align: left;"-->
+<!--&gt;</button><br><br>-->
+<!--<button pButton type="text" (click)="action(100,3)" label="[1] Use: Potion({{potion}})"-->
+<!--[disabled]="endgame||onbattle" style="width: 300px;text-align: left;"-->
+<!--&gt;</button><br><br>-->
+<!--<button pButton type="text" (click)="action(1,2)" label="[A] Skill: Bash (MP:5)"-->
+<!--[disabled]="endgame||onbattle||MP<5" style="width: 300px;text-align: left;"-->
+<!--&gt;</button><br><br>-->
+<!--<button pButton type="text" (click)="action(2,2)" label="[S] Skill: Ultimate Sword (MP:50)"-->
+<!--[disabled]="endgame||onbattle||MP<50" style="width: 300px;text-align: left;"-->
+<!--&gt;</button><br><br>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--stat-->
+
+<!--<div class="ui-g">-->
+<!--<span>-->
+<!--<div class="ui-g" style="width: 500px;height: 220px;border-style: ridge;">-->
+<!--<div class="ui-g-3">-->
+<!--<div class="ui-g-12">-->
+<!--<img src="../../images/chars/warrior.png" alt="" style="width: 100px;height: 120px">-->
+<!--</div>-->
+<!--<div class="ui-g-12">-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="ui-g-9 ui-g-nopad">-->
+<!--<div class="ui-g-2">-->
+<!--<span>Name: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4">-->
+<!--<span>AAAAAA</span>-->
+<!--</div>-->
+<!--<div class="ui-g-2">-->
+<!--<span>Class: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4">-->
+<!--<span>Warrior</span>-->
+<!--</div>-->
+<!--<div class="ui-g-1">-->
+<!--<span>HP: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4" align="center">-->
+<!--<span>{{HP}} / {{maxHP}}</span>-->
+<!--</div>-->
+<!--<div class="ui-g-7">-->
+<!--<div style="width: 200px;"><p-progressBar [value]="percentHP | number: '1.0-0'" class="hp" showValue=true unit="%"></p-progressBar></div>-->
+<!--</div>-->
+<!--<div class="ui-g-1">-->
+<!--<span>MP: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4" align="center">-->
+<!--<span>{{MP}} / {{maxMP}}</span>-->
+<!--</div>-->
+<!--<div class="ui-g-7">-->
+<!--<div style="width: 200px;">-->
+<!--<p-progressBar [value]="percentMP | number: '1.0-0'" class="mp" showValue="false" unit="%"></p-progressBar>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="ui-g-12">-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</span>-->
+
+
+<!--<span>-->
+<!--<div class="ui-g" style="width: 500px;height: 220px;border-style: ridge;">-->
+<!--<div class="ui-g-3">-->
+<!--<div class="ui-g-12" style="width: 100px;height: 120px">-->
+<!--<img src="../../images/monsters/1.gif" align="middle" >-->
+<!--</div>-->
+<!--<div class="ui-g-12">-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="ui-g-9 ui-g-nopad">-->
+<!--<div class="ui-g-2">-->
+<!--<span>Name: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4">-->
+<!--<span>Water Dragon</span>-->
+<!--</div>-->
+<!--<div class="ui-g-2">-->
+<!--<span>Class: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4">-->
+<!--<span>?????</span>-->
+<!--</div>-->
+<!--<div class="ui-g-1">-->
+<!--<span>HP: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4" align="center">-->
+<!--<span>{{eHP}} / {{emaxHP}}</span>-->
+<!--</div>-->
+<!--<div class="ui-g-7">-->
+<!--<div style="width: 200px;"><p-progressBar [value]="epercentHP | number: '1.0-0'" class="hp" showValue=true unit="%"></p-progressBar></div>-->
+<!--</div>-->
+<!--<div class="ui-g-1">-->
+<!--<span>MP: </span>-->
+<!--</div>-->
+<!--<div class="ui-g-4" align="center">-->
+<!--<span>{{eMP}} / {{emaxMP}}</span>-->
+<!--</div>-->
+<!--<div class="ui-g-7">-->
+<!--<div style="width: 200px;">-->
+<!--<p-progressBar [value]="epercentMP | number: '1.0-0'" class="mp" showValue="false" unit="%"></p-progressBar>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="ui-g-12">-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</span>-->
+<!--</div>-->
+
+
+
